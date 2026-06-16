@@ -1,3 +1,5 @@
+import "./Footer.scss";
+
 function Footer() {
   return (
     <footer className="footer">
@@ -23,8 +25,7 @@ function Footer() {
           <span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
             libero reprehenderit velit adipisci unde minima sit ab nesciunt
-            cumque soluta aspernatur inventore deserunt repellat ullam quibusdam
-            quis, fugit ad at.
+            cumque soluta aspernatur.
           </span>
         </div>
         <div className="item">
@@ -32,14 +33,13 @@ function Footer() {
           <span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
             libero reprehenderit velit adipisci unde minima sit ab nesciunt
-            cumque soluta aspernatur inventore deserunt repellat ullam quibusdam
-            quis, fugit ad at.
+            cumque soluta aspernatur.
           </span>
         </div>
       </div>
       <div className="bottom">
         <div className="left">
-          <span className="logo">WakabiStore</span>
+          <span className="logo">Wakabistore</span>
           <span className="copyright">
             &copy; Copyright 2026. All Rights Reserved
           </span>
