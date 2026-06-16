@@ -1,26 +1,49 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Products from "./pages/Products/Products";
+import Product from "./pages/Product/Product";
+import NotFound from "./pages/NotFound/NotFound";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
+
+const Layout = () => {
+  return (
+    <div className="app">
+      <NavBar />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <span>Home</span>,
-  },
-  {
-    path: "/products/:id",
-    element: <span>Category</span>,
-  },
-  {
-    path: "/product/:id",
-    element: <span>Product</span>,
+    element: <Layout />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "products/:id",
+        element: <Products />,
+      },
+      {
+        path: "product/:id",
+        element: <Product />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
   },
 ]);
 
 function App() {
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
